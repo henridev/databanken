@@ -424,19 +424,20 @@ Single user versus multi user systemen
 
 leerdoel : De student is na dit hoofdstuk in staat om vanuit geformuleerde informatiebehoeften een conceptueel model te maken.
 
-competenties: De student is zich bewust van de noodzaak om eerst een concep-tueel model te maken. De student kan de relevante **entiteittypes**, **attribuuttypes** en **relatietypes** uit een tekst halen en in een conceptueel model opnemen.De student kent de notatie van het diagram en kan het toepassen.
+competenties: De student is zich bewust van de noodzaak om eerst een conceptueel model te maken. De student kan de relevante **entiteitstypes**, **attribuuttypes** en **relatietypes** uit een tekst halen en in een conceptueel model opnemen. De student kent de notatie van het diagram en kan het toepassen.
 
-leerinhoud :
+**leerinhoud :**
 
-- Inleiding
-  - Wat is een conceptueel model
-  - Stappen in het bouwen van een database
-- Entity Relationship Model
-  - Bouwstenen
-  - Diagram (ERD)
-  - Relatie-attributen
+Wat is een conceptueel model
 
-leermateriaal :
+Stappen in het bouwen van een database
+
+Entity Relationship Model
+- Bouwstenen
+- Diagram (ERD)
+- Relatie-attributen
+
+**leermateriaal :**
 
 - Boek: Part I –H3.
 - Theorie slides H2
@@ -444,7 +445,7 @@ leermateriaal :
 
 ## Fases in Databank Ontwerp
 
-- verwamel en analyseer functionele en inhoudelijke vereisten
+- verzamel en analyseer functionele en inhoudelijke vereisten
 - conceptueel ontwerp
 - logisch ontwerp
 - fysiek ontwerp
