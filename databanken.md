@@ -1,106 +1,37 @@
 [TOC]
 
-# inleiding
-
-Beste student
-
-Het is de bedoeling dat je dit leerpad volgt. Er wordt, naast de slides, ook een syllabus ter beschikking gesteld. Daarin vinden jullie bijkomende informatie. De **syllabus vinden jullie onder 'Documenten'.**
-
-Het leerpad is ingedeeld in hoofdstukken. Het duurt ongeveer van 1 à 2 uur om een hoofdstuk door te nemen (oefeningen niet meegerekend). In de (theorie)slides zijn kleine vingeroefeningen ingewerkt waarvan de oplossing op de volgende slide staat. Bij de meeste hoofdstukken zijn ook oefeningenslides voorzien. Daar vind je de opgaven. Het is de bedoeling dat je deze zelfstandig maakt en indient via de module 'Opdrachten' in deze Chamilo cursus.
-
-Voor deze oefeningen is automatische feedback voorzien. Na het uploaden van jouw oplossing krijg je toegang tot een voorbeeldoplossing. Heb je nog vragen ivm deze voorbeeldoplossing of jouw eigen oplossing, dan kan je me steeds mailen (angeline.vanachter@hogent.be).
-
-**Hoofdstuk 1 Inleiding -Databanken gekaderd**
-
-- Definities
-- Toepassingen
-- Gegevensmanagement
-- Geschiedenis
-- Architectuur
-- Bouwen van een database
-
-**Hoofdstuk 2 - Conceptueel model**
-
-- Bouwen van een databank
-- Entiteit(type)
-- Attribuut(type)
-- Relatie(type)
-
-**Hoofdstuk 3 -Conceptueel model - zwak entiteittype**
-
-- Zwak entiteittype
-- Historiek
-- Connection traps
-
-**Hoofdstuk 4 -Conceptueelmodel -EERD**
-
-- Specialisatie
-
-**Hoofdstuk 5 - Relationeel Model**
-
-- Definities
-- Mapping
-
-**Hoofdstuk 6 - Normalisatie**
-
-- Functionele afhankelijkheid
-- Normalisatiestappen
-- Voorbeelden
-
-**Hoofdstuk 7-SQL - DML –1 tabel**
-
-- Select
-
-**Hoofdstuk 8-SQL –DML-> 1 tabel**
-
-- Group By
-- Join
-- Union
-
-**Hoofdstuk 9-SQL -DML–wijzigen data**
-
-- Insert
-- Update
-- Delete
-
-**Hoofdstuk 10 - SQL - DDL**
-
-- Create
-- Alter
-- Drop
-
 # Hoofdstuk 1 Inleiding -Databanken gekaderd
 
-leerdoel: De student een inzicht geven in wat een database is en wat de componenten zijn. Verder wordt ingegaan op het ontstaan, de evolutie en de verschillende soorten databanken en de verschillen met de vroegere manieren van data-opslag.
+**leerdoel:** 
 
-leerinhoud:
+- inzicht geven in wat een database is en wat de componenten zijn. 
+- verklaar het ontstaan, de evolutie en de verschillende soorten databanken en de verschillen met de vroegere manieren van data-opslag.
 
-- Definities:
-  - Database
-  - Database Management System
-  - Database programma.
-- Toepassingen
-  - Gegevensmanagement via bestanden en database.
-  - Geschiedenis
-    - 1e generatie databanken
-    - 2e generatie: Relationele databanken
-    - 3e generatie: nosql databanken.
-- LEERMATERIAAL
-  - Boek: Part I –H1en H2.
-  - Slides DB I H1Databanken gekaderd
+**leerinhoud:**
+
+- Definities: Database | Database Management Systeem | Database programma.
+- toepassingen
+
+- Gegevensmanagement via bestanden en database.
+- Geschiedenis: 1e generatie databanken | 2e generatie: Relationele databanken | 3e generatie: nosql databanken.
+
+**LEERMATERIAAL**
+
+- Boek: Part I – H1 en H2.
+- Slides DB I H1Databanken gekaderd
+
 - STUDIEAANWIJZINGEN Neem de slides door, samen met het boek. Dit hoofdstuk is grotendeels achtergrondinformatie om aan te tonen hoe de manieren van data-opslag zijn geëvolueerd en wat het belang is van een goede, centrale en duurzame data-opslag. In deze les is geen oefening opgenomen, dus normaal gezien zalje dit in minder dan 2u kunnen afronden.
 
 ## deel 1 basisbegrippen
 
-### databank / dbms / databankensysteem
-
-databank = Een **gedeelde** verzameling van **logisch met elkaar verbonden** gegevens en hun **beschrijving**, ontworpen om aan de informatienoden van een organisatie te voldoen (O. Connolly).
+**databank** = Een **gedeelde** verzameling van **logisch met elkaar verbonden** gegevens en hun **beschrijving**, 
+ontworpen om aan de informatienoden van een organisatie te voldoen.
 
 - digitaal opgeslagen
 - specifiek bedrijfsproces
 - specifieke groep (gebruikers en applicaties)
 
-dbms = een verzameling computer programma’s (softwaremodules) – Nodig om een databank
+**databasemanagementsystemen** = een verzameling computer programma’s (softwaremodules) – Nodig om een databank
 
 - definiëren - Data Definition Language
 - creëren
@@ -108,67 +39,32 @@ dbms = een verzameling computer programma’s (softwaremodules) – Nodig om een
 - beheren - Data Control Language
 - gebruiken (gegevens invoeren en ‘lezen’) - Data Query Language
 
-databankensysteem = dbms + databank
+**databasesysteem** = databasemanagementsystemen + databank
 
-### gegevensbeheer gecentraliseerd vs gedecentraliseerd
+### gegevensmanagement 
 
-Gedecentraliseerde aanpak:
+Gedecentraliseerde aanpak waarbij elke applicatie gegevens afzonderlijk zal bijhouden leidt tot de volgende :cry: :
 
-- Dubbele of redundante opslag
-- Risico op inconsistente data
+- **redundante** opslag (dubbele opslag)
+- **inconsistente** data (wijzigingen niet overal doorgevoerd)
 - Sterke koppeling tussen applicaties en data
 - Concurrente toegang moeilijk te realiseren
-- Applicaties voor meerdere diensten/bedrijven moeilijk te realiseren
+- inflexibel aangezien app moet worden aangepast indien men gegevens op andere manier wil benaderen
 
-Databank gerichteaanpak (gecentraliseerd):
+Gecentraliseerd databankgericht aanpak waarbij dbms opvraging van gegevens verwerkt heeft meer :smile: 
 
-- Efficiënter
-- Consistente data
-- Eenvoudiger te beheren
-- Losse koppeling tussen applicaties en data
-- DBMS biedt mogelijkheden bij het ‘lezen’ van data
+### delen van een databasesystem
 
-text vs SQL
+<img src="https://res.cloudinary.com/dri8yyakb/image/upload/v1609065230/Screenshot_from_2020-12-27_11-33-19_uxclcm.png" width=300 />
 
-```
-Procedure FindCustomer;
-begin
-	openfile Customer.txt;
-Read(Customer)
-While not EOF(Customer)
-If Customer.name='Bart' then
-display(Customer);
-EndIf
-Read(Customer);
-EndWhile;
-End;
-```
+#### Databasemodel versus instances.
 
-```mysql
-SELECT *
-FROM Customer
-WHERE
-name = 'Bart'
-```
-
-### delen van een databanksysteem
-
-- Databankmodel versus instances
-- Data model
-- 3-lagen architectuur
-- Catalog
-- Databankgebruikers
-- Databanktalen
-
-#### Databankmodel versus instances.
-
-- **Databankmodel** = databankschema
+- **Databasemodel** = databaseschema
   - bevat beschrijving van de databankstructuur en specificaties v/d elementen, hun eigenschappen,relaties, beperkingen, ...
   - Opgesteld tijdens databankontwerp
-  - Wijzigt niet snel
   - Opgeslagen in de **catalog**
   - Bevat **datamodellen**
-- Toestand van een databank
+-  **instance** = Toestand van een databank
   - Op dat ogenblik aanwezige data
   - Wijzigt voortdurend
 
@@ -188,53 +84,44 @@ name = 'Bart'
 > | lol  | Paris          | 20/10/2020    |
 > | lol  | Paris          | 20/10/2020    |
 >
-> ...
 
 #### Datamodel
 
-- Ondubbelzinnige beschrijving van de gegevens, de onderlinge relaties, de beperkingen
-- Vanuit een specifiek perspectie
+= Ondubbelzinnige beschrijving van de gegevens, de onderlinge relaties, de beperkingen
 
 - **Conceptueel gegevensmodel**
   - algemene beschrijving gegevenselementen, kenmerken en relaties
   - Gebruikt door ‘IT’ en ‘business’
-  - Weergave hoe ‘debusiness’ de gegevens ziet
+  - Weergave hoe ‘de business’ de gegevens ziet
   - Voorstelling: (E)ERD diagram
-- **Logisch gegevensmodel**
-  - vertaling conceptueel gegevensmodel naar het type databankmodel
-    - Relationeel, hiërarchisch, OO, XML, NoSQL
-- **Fysiek gegevensmodel**
-  - omzetten naar intern (fysiek) gegevensmodel
-    - Geeft informatie over fysieke opslag:
-      - waar worden welke gegevens opgeslagen
-      - Onder welke vorm
-      - Indexen die het ophalenversnellen
-    - Zeer DBMS afhankelijk
-- **Externe gegevensmodellen**
+- **Logisch gegevensmodel** = vertaling conceptueel gegevensmodel naar het type databankmodel (Relationeel, hiërarchisch, OO, XML, NoSQL...)
+- **Fysiek gegevensmodel** = omzetten naar intern (fysiek) gegevensmodel, Geeft informatie over fysieke opslag:
+  - waar worden welke gegevens opgeslagen
+  - Onder welke vorm
+  - Indexen die het ophalenversnellen
+- **Externe gegevensmodellen / VIEWS** 
   - Deelverzameling van het logisch model
   - Voor een specifieke doelgroep
   - Ook ‘VIEWS’ genoemd.
 
-<img src="https://i.pinimg.com/originals/86/7f/a7/867fa7370c3a0d9508db123a45b2c5b2.png"/>
+<img src="https://i.pinimg.com/originals/86/7f/a7/867fa7370c3a0d9508db123a45b2c5b2.png" width = 500/>
 
 #### 3 lagenmodel
 
-- externe laag
-- conceptuele logische laag
-- interne laag
+<img src="https://static.javatpoint.com/dbms/images/dbms-three-schema-architecture.png" width=350 />
 
-<img src="https://www.ecanarys.com/sites/default/files/anant.patil-50/3lyrs2.jpg"/>
+
 
 <img src="https://res.cloudinary.com/dri8yyakb/image/upload/v1605434487/Screenshot_2020-11-15_110036_axlmkv.png"/>
 
-#### catalog
+**catalog**
 
 - Schatkist van DBMS
 - Definities en beschrijving elementen in de DB (= metadata)
 - Definities logisch gegevensmodel en intern gegevensmodel
 - Zorgt voor synchronisatie en consistentie van de gegevensmodellen
 
-#### databankgebruikers
+**databankgebruikers**
 
 - IT Architect ontwerpt conceptueel gegevensmodel in samenspraak met de ‘business’
 - Dbontwerper vertaalt conceptueel model naar logisch en intern model
@@ -242,26 +129,26 @@ name = 'Bart'
 - Applicatieontwikkelaar schrijft databankprogramma’s/databankapplicaties
 - ‘Business’ gebruikt databankapplicaties en voert op die manier databankacties ui
 
-#### taal relationele databanken
+**taal relationele databanken**
 
 - SQL (Structured query language) = DDL + DML (+ DCL)
 - DML (Data manipulation language): verzameling instructies om gegevens in de databank toe te voegen, te wijzigen, te verwijderen en te raadplegen zowel via interactieve editor als vanuit applicatie
 - DDL (Data Definition language): de kenmerken van de gegevens en hun relaties beschrijven
 
-#### gegevensonafhankelijkheid
+**gegevensonafhankelijkheid**
 
 = wijzigingen aan de gegevensbeschrijving hebben weinig tot geen impact op de applicaties
 
 - **Fysieke gegevensonafhankelijkheid**: wijzigingen van de opslagspecificaties hebben geen invloed op logisch model noch op de applicatie wordt opgevangen door het DBMS
-- **Logische gegevensonafhankelijkheid**: minimale aangepassingen aan de applicaties bij wijzigingen logisch model
+- **Logische gegevensonafhankelijkheid**: minimale aanpassingen aan de applicaties bij wijzigingen logisch model
 
-#### **modellen**
+**modellen**
 
 - **Gegevensmodel**: weergave gegevens met hun kenmerken en hun relaties
 - **Conceptueel gegevensmodel**: perfecte weergave van de gegevensvereisten van de ‘business’ opgesteld met de business omgezet naar logisch en intern model
 - !!Veronderstellingen en ontbrekende informatie duidelijk vermelden!!
 
-#### (on)gestructureerde gegevens
+**(on)gestructureerde gegevens**
 
 - Gestructureerde gegevens
   - Kunnen in logisch datamodel voorgesteld worden
@@ -289,25 +176,26 @@ Integriteitsregels worden gedefinieerd op basis van het conceptueel model en opg
 
 ## Deel 2: Architectuur databanken.
 
-<img src="https://res.cloudinary.com/dri8yyakb/image/upload/v1605439287/Screenshot_2020-11-15_122049_vowqtj.png"/>
+
+
+
+
+<img src="https://res.cloudinary.com/dri8yyakb/image/upload/v1605439287/Screenshot_2020-11-15_122049_vowqtj.png" width=500/>
 
 ### security manager
 
 - module voor het beheren van toegangscontrole
 
 - heeft een gebruiker correcte rechten => **Leesrechten** | **schrijfrechten**
-- gebruiker
-  - gebruiker die interactief rechtstreeks acties op de DB uitvoert
-  - Applicatie die acties op de DB wil uitvoeren
+- gebruiker = iemand die interactief rechtstreeks acties op de DB uitvoert OF Applicatie die acties op de DB wil uitvoeren
 
-### connection manager
+### Connection manager
 
 - Module voor het beheren van de DB connectie
-- zorgt ervoor dat een verbinding met de databank kan wordenopgezet (lokaal of over een netwerk)
+- zorgt ervoor dat een verbinding met de databank kan worden opgezet (lokaal of over een netwerk)
 
 - Controleert de login gegevens indien ok, zet een connectie op
-- De DB connectie kan een afzonderlijk proces zijn
-- De DB connectie kan een onderdeel zijn van een groter proces (**thread**)
+- De DB connectie kan een afzonderlijk proces zijn OF een onderdeel zijn van een groter proces (**thread**)
 
 ### DDL Compiler
 
@@ -326,14 +214,14 @@ onderdelen :
 
 - DML compiler = zet DML commando’s om naar interne commando’s
   - **procedurele DML** = geeft expliciet aan **HOE** de databank doorlopen wordt
-    - **Record-at-a-time DML** = het resultaat is steeds 1 rij; een resultset wordt rij per rij aangeboden
+    - **Record-at-a-time DML** = het resultaat is steeds 1 rij; een result-set wordt rij per rij aangeboden
     - Geen query processor
   - declarative DML = geeft aan **WAT** moet opgehaald worden of **WELKE** wijzigingen moeten aangebracht worden
     - **Set-at-a-time DML** = het resultaat is een volledige set
     - query processor
   - Relationele databank <-> OO applicaties
     - Problemen met het op elkaar afstemmen van Object Oriented concepten en relationele concepten = **Impedance mismatch problem**
-    - Impedance mismatch solutions => Concepten op elkaar afstemmen (**ORM**) Middleware die de datastructuren van het relationeel kan afstemmen op de gebruikte programmeertaal
+    - **Impedance mismatch solutions** => Concepten op elkaar afstemmen (**ORM**) Middleware die de datastructuren van het relationeel kan afstemmen op de gebruikte programmeertaal
   - DML statements kunnen geïntegreerd zijn in applicaties van verschillende talen
   - De DML compiler zal de SQLstatements uit deze applicaties afzonderen
   - De DML compiler zal dan in samenwerking met de andere componenten de DML statements uitvoeren
@@ -378,7 +266,7 @@ onderdelen :
   - Als de buffers vol zijn, heeft de Buffer Manager nood aan een slimme procedure om die verder te kunnen gebruiken zonder informatie te verliezen (aanwezige data ergens stockeren)
   - Er is een wisselwerking tussen de Buffer Manager en de Lock Manager
 - **Lock manager**
-  - zorgt voor concurrency control en verzekert hierbij ten allen tijde volledige data integriteit
+  - zorgt voor **concurrency control** en verzekert hierbij ten allen tijde volledige data integriteit
   - 2 soorten: read lock en write lock
   - De Lock Manager is verantwoordelijk voor het leggen en weer vrijgeven van deze locks en het registreren ervan in de **catalog**
   - De Lock Manager maakt gebruik van een **locking protocol** dat de regels voor locking beschrijft en een **lock table** waarin de lock informatie wordt opgeslagen
@@ -400,10 +288,10 @@ onderdelen :
 
 ### indeling op basis van gegevensmodel
 
-#### hierarchische dbms
+#### hiërarchische dbms
 
 - **gegevensmodel** is omgekeerde boom
-- DML is **procedureel** en gebasseerd op recordverwerking
+- DML is **procedureel** en gebaseerd op recordverwerking
 - Geen query processor (logisch en fysisch datamodel lopen door elkaar)
 - vb : ims van IBM
 
